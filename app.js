@@ -1,31 +1,31 @@
 const quizDB = [
   {
     question: 'Q1: What is the full form of NITRA? ',
-    a: ' North India Textile Research Association',
-    b: ' Northern India Textile Research Association',
-    c: ' Northern India Testing Research Association',
-    d: ' Northern India Textile Research Authority',
+    a: 'North India Textile Research Association',
+    b: 'Northern India Textile Research Association',
+    c: 'Northern India Testing Research Association',
+    d: 'Northern India Textile Research Authority',
     ans: 'ans2',
   },
   {
-    question: 'Who is the Director Genral of NITRA? ',
+    question: 'Q2: Who is the Director Genral of NITRA?',
     a: 'ARINDAM BASU',
-    b: 'k K DEWAN',
+    b: 'K K DEWAN',
     c: 'NEERAJ AGRAWAL',
     d: 'NITIN SHARMA',
     ans: 'ans1',
   },
   {
-    question: 'Who is the Prime Minister of India? ',
+    question: 'Q3: Who is the Prime Minister of India?',
     a: 'Yogi Adityanath',
-    b: 'Narendra.Modi',
-    c: 'Mamata.Banerjee',
-    d: 'Arvind.Kejriwal',
+    b: 'Narendra Modi',
+    c: 'Mamata Banerjee',
+    d: 'Arvind Kejriwal',
     ans: 'ans2',
   },
   {
-    question: 'Who is the Chief Minister of Delhi? ',
-    a: ' Yogi Adityanath',
+    question: 'Q4: Who is the Chief Minister of Delhi?',
+    a: 'Yogi Adityanath',
     b: 'Mamata Banerjee',
     c: 'Narendra Modi',
     d: 'Arvind Kejriwal',
@@ -51,9 +51,9 @@ const loadQuestion = () => {
 
   question.innerText = questionList.question
 
-  option1.innerText = questionList.b
-  option2.innerText = questionList.a
-  option3.innerText = questionList.b
+  option1.innerText = questionList.a
+  option2.innerText = questionList.b
+  option3.innerText = questionList.c
   option4.innerText = questionList.d
 }
 
@@ -71,7 +71,7 @@ const getCheckAnswer = () => {
 }
 
 const deselectAll = () => {
-  answer.forEach((curAnsElem) => (curAnsElem.checked = false))
+  answers.forEach((curAnsElem) => (curAnsElem.checked = false))
 }
 
 submit.addEventListener('click', () => {
@@ -90,7 +90,8 @@ submit.addEventListener('click', () => {
   } else {
     showScore.innerHTML = `
     <h3> You scored ${score}/${quizDB.length} </h3>
-    <button class="btn" onclick="location.reload()"> </button>
+    <button class="btn" onclick="location.reload()">Play Again</button>
     `
+    showScore.classList.remove('scoreArea')
   }
 })

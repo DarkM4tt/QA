@@ -62,9 +62,14 @@ input {
   font-size: 3rem;
   text-align: center;
 }
-#showScore.btn {
+#showScore .btn {
   margin-top: 2rem;
   background-color: aqua;
+  color: #2d3436;
+}
+#showScore .btn:hover {
+  background-color: #00b894;
+  color: #fff;
 }
 .scoreArea {
   display: none;
